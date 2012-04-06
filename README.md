@@ -18,14 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-  require 'webhook'
+    require 'webhook'
 
-  code, message, body = Webhook.post('http://requestb.in/yadzsfya', :name => 'Abletech', :age => '6')
-  if code == '200'
-    puts "Success: #{body}"
-  else
-    puts "Error (#{code}): {message}\n#{body}"
-  end
+    code, message, body = Webhook.post('http://requestb.in/yadzsfya', :name => 'Abletech', :age => '6')
+    if code == '200'
+      puts "Success: #{body}"
+    else
+      puts "Error (#{code}): {message}\n#{body}"
+    end
 
 ## Contributing
 
