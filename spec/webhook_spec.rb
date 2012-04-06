@@ -47,7 +47,7 @@ describe Webhook do
     end
 
     context 'with a new User-Agent header' do
-      use_vcr_cassette 'request/user_agent' 
+      use_vcr_cassette 'requestbin/user_agent' 
 
       it 'returns a simple 200 response' do
         code, message, body = Webhook.post(
