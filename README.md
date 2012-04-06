@@ -27,6 +27,10 @@ Or install it yourself as:
       puts "Error (#{code}): {message}\n#{body}"
     end
 
+## Testing
+
+    rspec
+
 ## Contributing
 
 1. Fork it
