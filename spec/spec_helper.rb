@@ -8,7 +8,7 @@ require 'vcr'
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
-  c.hook_into :webmock # or :fakeweb
+  c.hook_into :fakeweb # or :webmock
   c.default_cassette_options = { :record => :none }
 end
 
