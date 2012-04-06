@@ -28,8 +28,8 @@ describe Webhook do
     context 'with two request headers' do
       use_vcr_cassette 'requestbin/extra_headers'
 
-      it 'returns a simple 200 response' do
-        code, message, body = Webhook.post(
+      before(:each) do
+        @code, @message, @body = Webhook.post(
           'http://requestb.in/yadzsfya', 
           {
             'time' => 'to go'
@@ -39,18 +39,26 @@ describe Webhook do
             'Initiator' => 'http://www.addressfinder.co.nz'
           }
         )
+      end
 
-        code.should eq('200')
-        message.should eq("OK")
-        body.should match(/ok/)
+      it 'returns a simple 200 response' do
+        @code.should eq('200')
+        @message.should eq("OK")
+        @body.should match(/ok/)
+      end
+
+      it 'sets the request headers correctly' do
+        headers = VCR::current_cassette.serializable_hash['http_interactions'].first['request']['headers']
+        headers['Referer'].should == ['http://www.abletech.co.nz']
+        headers['Initiator'].should == ['http://www.addressfinder.co.nz']
       end
     end
 
     context 'with a new User-Agent header' do
       use_vcr_cassette 'requestbin/user_agent' 
 
-      it 'returns a simple 200 response' do
-        code, message, body = Webhook.post(
+      before(:each) do
+        @code, @message, @body = Webhook.post(
           'http://requestb.in/yadzsfya', 
           {
             'time' => 'to go'
@@ -59,10 +67,17 @@ describe Webhook do
             'User-Agent' => 'VCR/Agent 1.0'
           }
         )
+      end
 
-        code.should eq('200')
-        message.should eq("OK")
-        body.should match(/ok/)
+      it 'returns a simple 200 response' do
+        @code.should eq('200')
+        @message.should eq("OK")
+        @body.should match(/ok/)
+      end
+
+      it 'sets the request headers correctly' do
+        headers = VCR::current_cassette.serializable_hash['http_interactions'].first['request']['headers']
+        headers['User-Agent'].should == ['VCR/Agent 1.0']
       end
     end
   end
