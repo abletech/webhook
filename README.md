@@ -29,7 +29,7 @@ Or install it yourself as:
 
 ## Testing
 
-    rspec
+    rake spec
 
 ## Contributing
 
