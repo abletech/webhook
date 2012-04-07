@@ -8,7 +8,7 @@ There are no runtime dependencies.
 
 Add this line to your application's Gemfile:
 
-    gem 'webhook', :git => "git@github.com:AbleTech/webhook.git"
+    gem 'webhook', '~> 0.0.1'
 
 And then execute:
 
@@ -23,6 +23,7 @@ Or install it yourself as:
     require 'webhook'
 
     code, message, body = Webhook.post('http://requestb.in/yadzsfya', :name => 'Abletech', :age => '6')
+
     if code == '200'
       puts "Success: #{body}"
     else
