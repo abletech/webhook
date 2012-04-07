@@ -31,7 +31,7 @@ Or install it yourself as:
 
     rake spec
 
-    [![Build Status](https://secure.travis-ci.org/AbleTech/webhook.png)](http://travis-ci.org/AbleTech/webhook)
+[![Build Status](https://secure.travis-ci.org/AbleTech/webhook.png)](http://travis-ci.org/AbleTech/webhook)
 
 ## Contributing
 
