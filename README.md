@@ -1,5 +1,7 @@
 # Webhook
 
+[![Code Climate](https://codeclimate.com/github/G5/webhook.png)](https://codeclimate.com/github/G5/webhook)
+
 Client library for making webhook calls. Compatible with Ruby 1.8.7, 1.9.2, 1.9.3, REE, JRuby 1.8 and 1.9. 
 
 There are no runtime dependencies. 
