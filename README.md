@@ -3,7 +3,7 @@
 [![Code Climate](https://codeclimate.com/github/AbleTech/webhook.png)](https://codeclimate.com/github/AbleTech/webhook)
 [![Build Status](https://secure.travis-ci.org/AbleTech/webhook.png)](http://travis-ci.org/AbleTech/webhook)
 
-Client library for making webhook calls. Compatible with Ruby 1.8.7, 1.9.2, 1.9.3, REE, JRuby 1.8 and 1.9.
+Client library for making webhook calls. Compatible with Ruby 1.8.7, 1.9.2, 1.9.3, 2.0.0, REE, JRuby 1.8 and 1.9.
 
 There are no runtime dependencies.
 
