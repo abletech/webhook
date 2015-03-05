@@ -35,6 +35,11 @@ module Webhook
       uri = URI.parse(url)
       use_ssl = (uri.scheme.downcase == 'https')
       req = Net::HTTP::Post.new(uri.path, headers)
+
+      unless uri.user.nil? && uri.password.nil?
+        req.basic_auth uri.user, uri.password
+      end
+
       req.form_data = form_fields
 
       begin

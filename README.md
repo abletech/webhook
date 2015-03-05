@@ -11,7 +11,7 @@ There are no runtime dependencies.
 
 Add this line to your application's Gemfile:
 
-    gem 'webhook', '~> 0.1.0'
+    gem 'webhook', '~> 0.1.1'
 
 And then execute:
 
